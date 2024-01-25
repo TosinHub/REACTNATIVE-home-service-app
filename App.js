@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './App/Screens/LoginScreen/Login';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
+import { NavigationContainer } from '@react-navigation/native';
+import TabNavigation from './App/Navigations/TabNavigation';
 
 const tokenCache = {
   async getToken(key) {
@@ -23,18 +25,21 @@ const tokenCache = {
 
 export default function App() {
   return (
-    <ClerkProvider tokenCache={tokenCache} publishableKey='pk_test_Y29udGVudC1hc3AtMzguY2xlcmsuYWNjb3VudHMuZGV2JA'>
-      <View style={styles.container}>
+   <ClerkProvider tokenCache={tokenCache} publishableKey='pk_test_Y29udGVudC1hc3AtMzguY2xlcmsuYWNjb3VudHMuZGV2JA'>
         <SignedIn>
-          <Text>You are signed in!</Text>
-        </SignedIn>
-        <SignedOut>
-          <Login />
-        </SignedOut>
-
+        
+        </SignedIn> 
+         <SignedOut>
+    
+        <NavigationContainer>
+          <TabNavigation />
+        </NavigationContainer>
         <StatusBar style="auto" />
-      </View>
-    </ClerkProvider>
+        </SignedOut> 
+     </ClerkProvider>
+     
+        
+       
 
   );
 }
