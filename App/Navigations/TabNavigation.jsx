@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
 
     return (
-        <Tab.Navigator screenOptions={{ headerShown: true, tabBarActiveTintColor: Colors.PRIMARY }}>
+        <Tab.Navigator screenOptions={{ headerShown: false, tabBarActiveTintColor: Colors.PRIMARY }}>
             <Tab.Screen name='home' component={HomeScreen} options={{
                 tabBarLabel: ({ color }) => (
                     <Text style={{ color: color, fontSize: 12, marginTop: -7 }}>Home</Text>
@@ -26,7 +26,7 @@ export default function TabNavigation() {
             }} />
             <Tab.Screen name='booking' component={BookingScreen} options={{
                 tabBarLabel: ({ color }) => (
-                    <Text style={{ color: color, fontSize: 12, marginTop: -7 }}>Home</Text>
+                    <Text style={{ color: color, fontSize: 12, marginTop: -7 }}>Booking</Text>
                 ),
                 tabBarIcon: ({ color, size }) => (
                     <FontAwesome5 name="bookmark" size={size} color={color} />
@@ -36,7 +36,7 @@ export default function TabNavigation() {
             }} />
             <Tab.Screen name='profile' component={ProfileScreen} options={{
                 tabBarLabel: ({ color }) => (
-                    <Text style={{ color: color, fontSize: 12, marginTop: -7 }}>Home</Text>
+                    <Text style={{ color: color, fontSize: 12, marginTop: -7 }}>Profile</Text>
                 ),
                 tabBarIcon: ({ color, size }) => (
                     <FontAwesome5 name="user-circle" size={size} color={color} />
