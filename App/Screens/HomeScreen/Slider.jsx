@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, FlatList, Image } from 'react-native'
 import GlobalApi from '../../Utils/GlobalApi'
 
 
@@ -22,6 +22,12 @@ export default function Slider() {
       <View>
         <Text style={styles.heading} >Offers For You</Text>
 
+        <FlatList data={slider} horizontal={true} showsHorizontalScrollIndicator={false} renderItem={({item, index})=>(
+        <View style={{marginRight:20}}>
+         <Image source={{uri:item?.image?.url}} style={styles.sliderImage}/> 
+        </View>
+        )}/>
+
 
       </View>
     )
@@ -32,5 +38,11 @@ export default function Slider() {
             fontSize: 20,
             fontFamily: 'outfit-medium',
             marginBottom: 10
+        },
+        sliderImage: {
+          width: 270,
+          height: 150,
+          borderRadius: 20,
+          objectFit: 'fill'
         }
   })
