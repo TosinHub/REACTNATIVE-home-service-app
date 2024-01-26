@@ -5,11 +5,13 @@ import Slider from './Slider'
 
 export default function HomeScreen() {
 
-    return (
-      <View>
-        <Header />
+  return (
+    <View>
+      <Header />
+      <View style={{ padding: 20 }}>
         <Slider />
       </View>
-    )
-  }
+    </View>
+  )
+}
 

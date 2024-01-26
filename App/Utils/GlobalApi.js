@@ -18,4 +18,8 @@ const getSlider = async () => {
     return result
 }
 
+export default {
+    getSlider
+}
+
 
