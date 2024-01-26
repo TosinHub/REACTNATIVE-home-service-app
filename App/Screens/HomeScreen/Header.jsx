@@ -11,10 +11,10 @@ export default function Header() {
                 <View style={styles.profileContainer}>
                     <Image source={require('../../../assets/tense-young.jpg')} style={styles.userImage} />
                     <View >
-                        <Text style={{ color: Colors.WHITE }}>
+                        <Text style={{ color: Colors.WHITE , fontFamily:'outfit'}}>
                             Welcome,
                         </Text>
-                        <Text style={{ color: Colors.WHITE, fontSize: 20 }}>
+                        <Text style={{ color: Colors.WHITE, fontSize: 20, fontFamily:'outfit-medium' }}>
                             Daniel
                         </Text>
                     </View>
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.WHITE,
         borderRadius: 8,
         width:'85%',
-        fontSize: 16
+        fontSize: 16,
+        fontFamily:'outfit'
     },
     searchBarContainer: {
         marginTop: 15,
